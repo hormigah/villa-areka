@@ -30,7 +30,7 @@ export default function LaCasa() {
   return (
     <>
       {/* Encabezado */}
-      <section className="relative flex min-h-[62svh] items-end overflow-hidden bg-selva">
+      <section className="bg-selva relative flex min-h-[62svh] items-end overflow-hidden">
         <div className="absolute inset-0">
           <MediaPlaceholder
             label="Foto ambiental de Villa Areka"
@@ -44,16 +44,16 @@ export default function LaCasa() {
               "linear-gradient(180deg, rgba(18,37,27,0.5) 0%, rgba(18,37,27,0.35) 45%, rgba(18,37,27,0.95) 100%)",
           }}
         />
-        <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pb-16 pt-32 md:px-10">
+        <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pt-32 pb-16 md:px-10">
           <div className="reveal max-w-2xl">
-            <div className="flex items-center gap-3 text-oro">
+            <div className="text-oro flex items-center gap-3">
               <PalmFrond className="h-6 w-6" />
               <Eyebrow className="text-oro-300">La Casa</Eyebrow>
             </div>
-            <h1 className="display mt-6 text-5xl text-arena sm:text-6xl md:text-7xl">
+            <h1 className="display text-arena mt-6 text-5xl sm:text-6xl md:text-7xl">
               Nuestra historia
             </h1>
-            <p className="mt-6 max-w-xl text-lg text-arena/85">
+            <p className="text-arena/85 mt-6 max-w-xl text-lg">
               Un proyecto familiar nacido del amor por la naturaleza y el buen
               descanso en el corazón de los Llanos.
             </p>
@@ -64,7 +64,7 @@ export default function LaCasa() {
       {/* Relato */}
       <Section className="bg-arena">
         <div className="grid gap-12 md:grid-cols-[1.05fr_0.95fr] md:items-start">
-          <div className="space-y-6 text-lg leading-relaxed text-tinta/80">
+          <div className="text-tinta/80 space-y-6 text-lg leading-relaxed">
             <p>
               Villa Areka surgió de una idea sencilla: crear un lugar donde el
               tiempo pasara más despacio. En la {site.location.vereda}, a las
@@ -75,8 +75,8 @@ export default function LaCasa() {
             <p>
               Levantamos la finca con la intención de compartirla. Cada espacio
               —la piscina, las zonas sociales, los jardines— fue pensado para
-              recibir a familias y amigos que buscan desconectarse y reencontrarse
-              con lo importante.
+              recibir a familias y amigos que buscan desconectarse y
+              reencontrarse con lo importante.
             </p>
             <p>
               Hoy Villa Areka abre sus puertas para que más personas vivan esa
@@ -95,17 +95,17 @@ export default function LaCasa() {
       {/* El nombre / significado */}
       <Section className="bg-selva text-arena">
         <div className="mx-auto max-w-3xl text-center">
-          <PalmFrond className="mx-auto h-14 w-14 text-oro" />
-          <Eyebrow className="mt-6 text-oro-300">El nombre</Eyebrow>
+          <PalmFrond className="text-oro mx-auto h-14 w-14" />
+          <Eyebrow className="text-oro-300 mt-6">El nombre</Eyebrow>
           <h2 className="display mt-4 text-4xl sm:text-5xl">
             ¿Por qué “Areka”?
           </h2>
-          <p className="mt-6 text-lg leading-relaxed text-arena/80">
+          <p className="text-arena/80 mt-6 text-lg leading-relaxed">
             La palma <em>areca</em> es símbolo de trópico, frescura y vida. Da
             sombra, embellece y acompaña el paisaje llanero. De ella tomamos el
             nombre y el espíritu de la finca:{" "}
-            <span className="text-oro-300">naturaleza y descanso</span>, la misma
-            promesa que aparece en el letrero que da la bienvenida.
+            <span className="text-oro-300">naturaleza y descanso</span>, la
+            misma promesa que aparece en el letrero que da la bienvenida.
           </p>
         </div>
       </Section>
@@ -114,7 +114,7 @@ export default function LaCasa() {
       <Section className="bg-arena">
         <div className="mb-14 max-w-2xl">
           <Eyebrow className="text-madera">Lo que nos mueve</Eyebrow>
-          <h2 className="display mt-4 text-4xl text-tinta sm:text-5xl">
+          <h2 className="display text-tinta mt-4 text-4xl sm:text-5xl">
             Tres cosas que cuidamos
           </h2>
         </div>
@@ -122,10 +122,10 @@ export default function LaCasa() {
           {valores.map((v) => (
             <div
               key={v.title}
-              className="rounded-2xl border border-tinta/10 bg-arena-200/50 p-8"
+              className="border-tinta/10 bg-arena-200/50 rounded-2xl border p-8"
             >
-              <h3 className="display text-2xl text-tinta">{v.title}</h3>
-              <p className="mt-3 text-tinta/75">{v.text}</p>
+              <h3 className="display text-tinta text-2xl">{v.title}</h3>
+              <p className="text-tinta/75 mt-3">{v.text}</p>
             </div>
           ))}
         </div>

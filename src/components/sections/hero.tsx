@@ -5,7 +5,7 @@ import { site, integrations } from "@/lib/site";
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-[100svh] items-end overflow-hidden bg-selva">
+    <section className="bg-selva relative flex min-h-[100svh] items-end overflow-hidden">
       {/* Fondo: aquí irá el video o la foto principal de la finca */}
       <div className="absolute inset-0">
         <MediaPlaceholder
@@ -25,18 +25,18 @@ export function Hero() {
       />
 
       {/* Contenido */}
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pb-20 pt-32 md:px-10 md:pb-28">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pt-32 pb-20 md:px-10 md:pb-28">
         <div className="reveal max-w-3xl">
-          <div className="flex items-center gap-3 text-oro">
+          <div className="text-oro flex items-center gap-3">
             <PalmFrond className="h-6 w-6" />
             <Eyebrow className="text-oro-300">{site.tagline}</Eyebrow>
           </div>
 
-          <h1 className="display mt-6 text-6xl text-arena sm:text-7xl md:text-8xl">
+          <h1 className="display text-arena mt-6 text-6xl sm:text-7xl md:text-8xl">
             <span className="italic">Villa</span> Areka
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-arena/85 md:text-xl">
+          <p className="text-arena/85 mt-6 max-w-xl text-lg leading-relaxed md:text-xl">
             Una finca para desconectarse en la {site.location.vereda},{" "}
             {site.location.city}. Piscina, cielo abierto y el descanso profundo
             de los Llanos Orientales.
@@ -55,7 +55,7 @@ export function Hero() {
             )}
           </div>
 
-          <p className="mt-8 text-sm text-arena/60">
+          <p className="text-arena/60 mt-8 text-sm">
             {site.location.fromBogota}
           </p>
         </div>

@@ -84,8 +84,16 @@ const lodgingJsonLd = {
   email: site.contact.email,
   amenityFeature: [
     { "@type": "LocationFeatureSpecification", name: "Piscina", value: true },
-    { "@type": "LocationFeatureSpecification", name: "Naturaleza", value: true },
-    { "@type": "LocationFeatureSpecification", name: "Zona de asados", value: true },
+    {
+      "@type": "LocationFeatureSpecification",
+      name: "Naturaleza",
+      value: true,
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      name: "Zona de asados",
+      value: true,
+    },
   ],
 };
 
@@ -97,7 +105,7 @@ export default function RootLayout({
       lang="es-CO"
       className={`${fraunces.variable} ${hanken.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-arena text-tinta">
+      <body className="bg-arena text-tinta flex min-h-full flex-col">
         <JsonLd data={lodgingJsonLd} />
         <SiteHeader />
         <main className="flex-1">{children}</main>

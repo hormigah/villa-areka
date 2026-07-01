@@ -8,11 +8,11 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 md:grid-cols-3 md:px-10">
         <div>
           <div className="flex items-center gap-2.5">
-            <PalmFrond className="h-8 w-8 text-oro" />
+            <PalmFrond className="text-oro h-8 w-8" />
             <span className="display text-2xl italic">{site.name}</span>
           </div>
-          <p className="eyebrow mt-3 text-oro-300">{site.tagline}</p>
-          <p className="mt-4 max-w-xs text-sm text-arena/70">
+          <p className="eyebrow text-oro-300 mt-3">{site.tagline}</p>
+          <p className="text-arena/70 mt-4 max-w-xs text-sm">
             Finca de descanso en {site.location.vereda}, {site.location.city} ·{" "}
             {site.location.region}, {site.location.country}.
           </p>
@@ -25,7 +25,7 @@ export function SiteFooter() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="text-arena/80 transition-colors hover:text-oro"
+                  className="text-arena/80 hover:text-oro transition-colors"
                 >
                   {item.label}
                 </Link>
@@ -36,11 +36,11 @@ export function SiteFooter() {
 
         <div>
           <h2 className="eyebrow text-arena/50">Contacto</h2>
-          <ul className="mt-4 space-y-2 text-sm text-arena/80">
+          <ul className="text-arena/80 mt-4 space-y-2 text-sm">
             <li>
               <a
                 href={`https://wa.me/${site.contact.whatsapp}`}
-                className="transition-colors hover:text-oro"
+                className="hover:text-oro transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -50,7 +50,7 @@ export function SiteFooter() {
             <li>
               <a
                 href={`mailto:${site.contact.email}`}
-                className="transition-colors hover:text-oro"
+                className="hover:text-oro transition-colors"
               >
                 {site.contact.email}
               </a>
@@ -59,7 +59,7 @@ export function SiteFooter() {
               <li>
                 <a
                   href={site.social.instagram}
-                  className="transition-colors hover:text-oro"
+                  className="hover:text-oro transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -71,7 +71,7 @@ export function SiteFooter() {
               <li>
                 <a
                   href={integrations.airbnbUrl}
-                  className="transition-colors hover:text-oro"
+                  className="hover:text-oro transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -84,7 +84,7 @@ export function SiteFooter() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-6 py-6 text-xs text-arena/50 sm:flex-row md:px-10">
+        <div className="text-arena/50 mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-6 py-6 text-xs sm:flex-row md:px-10">
           <p>
             © {new Date().getFullYear()} {site.name}. Todos los derechos
             reservados.

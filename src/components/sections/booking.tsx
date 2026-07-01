@@ -21,10 +21,10 @@ export function Booking() {
           <h2 className="display mt-4 text-4xl sm:text-5xl">
             Aparta tus días en Villa Areka
           </h2>
-          <p className="mt-5 max-w-md text-arena/75">
+          <p className="text-arena/75 mt-5 max-w-md">
             Elige cómo prefieres reservar. Muy pronto habilitaremos la reserva
-            directa en línea; mientras tanto, escríbenos por WhatsApp o resérvala
-            a través de Airbnb.
+            directa en línea; mientras tanto, escríbenos por WhatsApp o
+            resérvala a través de Airbnb.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
@@ -40,10 +40,10 @@ export function Booking() {
         </div>
 
         {/* Tarjeta de reserva directa — deshabilitada hasta tener backend */}
-        <div className="rounded-2xl border border-white/10 bg-selva-700/60 p-6 backdrop-blur-sm sm:p-8">
+        <div className="bg-selva-700/60 rounded-2xl border border-white/10 p-6 backdrop-blur-sm sm:p-8">
           <div className="mb-5 flex items-center justify-between">
             <h3 className="display text-2xl">Reserva directa</h3>
-            <span className="rounded-full bg-oro/15 px-3 py-1 text-xs font-semibold text-oro-300">
+            <span className="bg-oro/15 text-oro-300 rounded-full px-3 py-1 text-xs font-semibold">
               Próximamente
             </span>
           </div>
@@ -56,7 +56,7 @@ export function Booking() {
                 <input
                   type="date"
                   disabled
-                  className="mt-1 w-full rounded-lg border border-white/15 bg-selva px-3 py-2.5 text-arena/60"
+                  className="bg-selva text-arena/60 mt-1 w-full rounded-lg border border-white/15 px-3 py-2.5"
                 />
               </label>
               <label className="block text-sm">
@@ -64,7 +64,7 @@ export function Booking() {
                 <input
                   type="date"
                   disabled
-                  className="mt-1 w-full rounded-lg border border-white/15 bg-selva px-3 py-2.5 text-arena/60"
+                  className="bg-selva text-arena/60 mt-1 w-full rounded-lg border border-white/15 px-3 py-2.5"
                 />
               </label>
             </div>
@@ -75,18 +75,18 @@ export function Booking() {
                 min={1}
                 disabled
                 placeholder="2"
-                className="mt-1 w-full rounded-lg border border-white/15 bg-selva px-3 py-2.5 text-arena/60"
+                className="bg-selva text-arena/60 mt-1 w-full rounded-lg border border-white/15 px-3 py-2.5"
               />
             </label>
             <button
               type="button"
               disabled
-              className="w-full cursor-not-allowed rounded-full bg-oro/40 px-6 py-3 text-sm font-semibold text-selva/70"
+              className="bg-oro/40 text-selva/70 w-full cursor-not-allowed rounded-full px-6 py-3 text-sm font-semibold"
             >
               Consultar disponibilidad
             </button>
           </form>
-          <p className="mt-4 text-xs text-arena/50">
+          <p className="text-arena/50 mt-4 text-xs">
             La reserva en línea se activará al conectar el sistema de pagos y
             disponibilidad.
           </p>

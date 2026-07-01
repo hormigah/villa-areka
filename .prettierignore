@@ -1,0 +1,14 @@
+# Artefactos y dependencias
+.next/
+out/
+build/
+node_modules/
+.agents/
+.claude/skills/
+
+# Lockfiles y generados
+pnpm-lock.yaml
+next-env.d.ts
+
+# Documentación de imágenes
+docs/

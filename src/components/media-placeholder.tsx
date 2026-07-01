@@ -37,7 +37,12 @@ export function MediaPlaceholder({
       />
       {kind === "video" ? (
         <span className="mb-3 flex h-14 w-14 items-center justify-center rounded-full border border-current/40">
-          <svg viewBox="0 0 24 24" className="ml-1 h-6 w-6" fill="currentColor" aria-hidden="true">
+          <svg
+            viewBox="0 0 24 24"
+            className="ml-1 h-6 w-6"
+            fill="currentColor"
+            aria-hidden="true"
+          >
             <path d="M8 5v14l11-7z" />
           </svg>
         </span>

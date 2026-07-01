@@ -18,12 +18,12 @@ pnpm dev                           # http://localhost:3000
 
 ## Scripts
 
-| Comando       | Descripción            |
-| ------------- | ---------------------- |
-| `pnpm dev`    | Servidor de desarrollo |
-| `pnpm build`  | Build de producción    |
-| `pnpm start`  | Sirve el build         |
-| `pnpm lint`   | ESLint                 |
+| Comando      | Descripción            |
+| ------------ | ---------------------- |
+| `pnpm dev`   | Servidor de desarrollo |
+| `pnpm build` | Build de producción    |
+| `pnpm start` | Sirve el build         |
+| `pnpm lint`  | ESLint                 |
 
 ## Páginas
 

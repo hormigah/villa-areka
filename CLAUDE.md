@@ -30,13 +30,24 @@ El gestor de paquetes es **pnpm** (fijado en `packageManager` de `package.json`)
 No usar `npm`/`yarn` (evita generar `package-lock.json`).
 
 ```bash
-pnpm install    # instalar dependencias
-pnpm dev        # desarrollo (http://localhost:3000)
-pnpm build      # build de producción
-pnpm start      # servir el build
-pnpm lint       # ESLint
+pnpm install       # instalar dependencias
+pnpm dev           # desarrollo (http://localhost:3000)
+pnpm build         # build de producción
+pnpm start         # servir el build
+
+pnpm lint          # ESLint
+pnpm lint:fix      # ESLint con auto-fix
+pnpm typecheck     # TypeScript sin emitir (tsc --noEmit)
+pnpm format        # Prettier: formatea todo
+pnpm format:check  # Prettier: verifica formato (no escribe)
+pnpm check         # format:check + lint + typecheck (usar antes de commit/PR)
+
 pnpm dlx react-doctor@latest src   # auditoría React (objetivo: 100/100)
 ```
+
+Prettier ordena las clases de Tailwind automáticamente
+(`prettier-plugin-tailwindcss`) y ESLint delega el formato a Prettier
+(`eslint-config-prettier`), así que no compiten.
 
 ## Estructura
 
@@ -131,8 +142,8 @@ Configuradas en `src/lib/site.ts` (`integrations`) y por variables de entorno
 
 ## Reglas al contribuir
 
-- Antes de dar por terminada una tarea: `pnpm build` y `pnpm dlx react-doctor src`
-  deben pasar (build limpio, doctor 100/100).
+- Antes de dar por terminada una tarea: `pnpm check` (format + lint + types),
+  `pnpm build` y `pnpm dlx react-doctor src` deben pasar (todo limpio, doctor 100/100).
 - No introducir `dangerouslySetInnerHTML` sin escapar; usar `<JsonLd>`.
 - Mantener el contenido en `site.ts`, el diseño en tokens y el español como idioma.
 - Skills de referencia (diseño y patrones Next.js): **frontend-design**,

@@ -34,16 +34,16 @@ export default function Home() {
         <div className="grid gap-12 md:grid-cols-[1.1fr_0.9fr] md:items-center">
           <div>
             <Eyebrow className="text-madera">Bienvenido</Eyebrow>
-            <h2 className="display mt-4 text-4xl text-tinta sm:text-5xl">
+            <h2 className="display text-tinta mt-4 text-4xl sm:text-5xl">
               El descanso que se respira en el Llano
             </h2>
-            <p className="mt-6 text-lg leading-relaxed text-tinta/80">
+            <p className="text-tinta/80 mt-6 text-lg leading-relaxed">
               Villa Areka nace del deseo de volver a lo esencial: el agua, la
               sombra de las palmas y el silencio del atardecer llanero. Un lugar
               pensado para reunir a la familia, celebrar y, sobre todo,
               descansar.
             </p>
-            <p className="mt-4 text-lg leading-relaxed text-tinta/80">
+            <p className="text-tinta/80 mt-4 text-lg leading-relaxed">
               A pocos minutos de Villavicencio y a un paso de la naturaleza, es
               el refugio ideal para desconectarse del ruido de la ciudad.
             </p>
@@ -73,14 +73,14 @@ export default function Home() {
           {amenities.map((a) => (
             <li
               key={a.title}
-              className="group bg-selva-800 p-8 transition-colors hover:bg-selva-700"
+              className="group bg-selva-800 hover:bg-selva-700 p-8 transition-colors"
             >
               <AmenityIcon
                 name={a.icon}
-                className="h-8 w-8 text-oro transition-transform duration-300 group-hover:-translate-y-0.5"
+                className="text-oro h-8 w-8 transition-transform duration-300 group-hover:-translate-y-0.5"
               />
               <h3 className="display mt-5 text-2xl">{a.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-arena/70">
+              <p className="text-arena/70 mt-2 text-sm leading-relaxed">
                 {a.description}
               </p>
             </li>
@@ -93,20 +93,44 @@ export default function Home() {
         <div className="mb-12 flex items-end justify-between gap-6">
           <div>
             <Eyebrow className="text-madera">Galería</Eyebrow>
-            <h2 className="display mt-4 text-4xl text-tinta sm:text-5xl">
+            <h2 className="display text-tinta mt-4 text-4xl sm:text-5xl">
               Un vistazo a Villa Areka
             </h2>
           </div>
-          <PalmFrond className="hidden h-12 w-12 shrink-0 text-palma sm:block" />
+          <PalmFrond className="text-palma hidden h-12 w-12 shrink-0 sm:block" />
         </div>
         {/* Retícula tipo mosaico; cada bloque se reemplaza por una foto real */}
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-          <MediaPlaceholder tone="light" label="Piscina" className="col-span-2 aspect-[4/3]" />
-          <MediaPlaceholder tone="light" label="Zona social" className="aspect-square" />
-          <MediaPlaceholder tone="light" label="Habitación" className="aspect-square" />
-          <MediaPlaceholder tone="light" label="Jardines" className="aspect-square" />
-          <MediaPlaceholder tone="light" label="Atardecer llanero" className="aspect-square" />
-          <MediaPlaceholder tone="light" label="Zona de asados" className="col-span-2 aspect-[4/3]" />
+          <MediaPlaceholder
+            tone="light"
+            label="Piscina"
+            className="col-span-2 aspect-[4/3]"
+          />
+          <MediaPlaceholder
+            tone="light"
+            label="Zona social"
+            className="aspect-square"
+          />
+          <MediaPlaceholder
+            tone="light"
+            label="Habitación"
+            className="aspect-square"
+          />
+          <MediaPlaceholder
+            tone="light"
+            label="Jardines"
+            className="aspect-square"
+          />
+          <MediaPlaceholder
+            tone="light"
+            label="Atardecer llanero"
+            className="aspect-square"
+          />
+          <MediaPlaceholder
+            tone="light"
+            label="Zona de asados"
+            className="col-span-2 aspect-[4/3]"
+          />
         </div>
       </Section>
 
@@ -118,7 +142,7 @@ export default function Home() {
             <h2 className="display mt-4 text-4xl sm:text-5xl">
               Vive la finca antes de llegar
             </h2>
-            <p className="mt-5 text-arena/75">
+            <p className="text-arena/75 mt-5">
               Un recorrido en video por los espacios, la piscina y el entorno
               natural de Villa Areka.
             </p>
@@ -136,21 +160,23 @@ export default function Home() {
         <div className="grid gap-12 md:grid-cols-2 md:items-center">
           <div>
             <Eyebrow className="text-madera">Ubicación</Eyebrow>
-            <h2 className="display mt-4 text-4xl text-tinta sm:text-5xl">
+            <h2 className="display text-tinta mt-4 text-4xl sm:text-5xl">
               {site.location.vereda}, {site.location.city}
             </h2>
-            <p className="mt-6 text-lg leading-relaxed text-tinta/80">
+            <p className="text-tinta/80 mt-6 text-lg leading-relaxed">
               Villa Areka está en la {site.location.vereda}, en{" "}
               {site.location.city} ({site.location.region}), en pleno corazón de
               los Llanos Orientales de Colombia.
             </p>
             <dl className="mt-8 space-y-4">
-              <div className="flex gap-4 border-t border-tinta/10 pt-4">
-                <dt className="eyebrow w-32 shrink-0 text-madera">Desde Bogotá</dt>
+              <div className="border-tinta/10 flex gap-4 border-t pt-4">
+                <dt className="eyebrow text-madera w-32 shrink-0">
+                  Desde Bogotá
+                </dt>
                 <dd className="text-tinta/80">{site.location.fromBogota}</dd>
               </div>
-              <div className="flex gap-4 border-t border-tinta/10 pt-4">
-                <dt className="eyebrow w-32 shrink-0 text-madera">Entorno</dt>
+              <div className="border-tinta/10 flex gap-4 border-t pt-4">
+                <dt className="eyebrow text-madera w-32 shrink-0">Entorno</dt>
                 <dd className="text-tinta/80">
                   Rural, tranquilo y rodeado de naturaleza llanera.
                 </dd>
@@ -181,8 +207,8 @@ export default function Home() {
           <dl className="divide-y divide-white/10">
             {faqs.map((f) => (
               <div key={f.q} className="py-6 first:pt-0">
-                <dt className="display text-xl text-arena">{f.q}</dt>
-                <dd className="mt-2 text-arena/70">{f.a}</dd>
+                <dt className="display text-arena text-xl">{f.q}</dt>
+                <dd className="text-arena/70 mt-2">{f.a}</dd>
               </div>
             ))}
           </dl>

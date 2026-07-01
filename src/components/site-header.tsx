@@ -28,29 +28,32 @@ export function SiteHeader() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 ${
         scrolled
-          ? "bg-selva/90 backdrop-blur-md border-b border-white/5"
+          ? "bg-selva/90 border-b border-white/5 backdrop-blur-md"
           : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex h-18 max-w-6xl items-center justify-between px-6 py-4 md:px-10">
         <Link
           href="/"
-          className="group flex items-center gap-2.5 text-arena"
+          className="group text-arena flex items-center gap-2.5"
           aria-label={`${site.name} — inicio`}
         >
-          <PalmFrond className="h-7 w-7 text-oro transition-transform duration-500 group-hover:-rotate-6" />
-          <span className="display text-2xl italic leading-none">
+          <PalmFrond className="text-oro h-7 w-7 transition-transform duration-500 group-hover:-rotate-6" />
+          <span className="display text-2xl leading-none italic">
             {site.name}
           </span>
         </Link>
 
         {/* Navegación de escritorio */}
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Principal">
+        <nav
+          className="hidden items-center gap-8 md:flex"
+          aria-label="Principal"
+        >
           {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-arena/80 transition-colors hover:text-oro"
+              className="text-arena/80 hover:text-oro text-sm font-medium transition-colors"
             >
               {item.label}
             </Link>
@@ -61,7 +64,7 @@ export function SiteHeader() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="flex h-10 w-10 items-center justify-center rounded-full text-arena md:hidden"
+          className="text-arena flex h-10 w-10 items-center justify-center rounded-full md:hidden"
           aria-expanded={open}
           aria-controls="menu-movil"
           aria-label={open ? "Cerrar menú" : "Abrir menú"}
@@ -73,7 +76,7 @@ export function SiteHeader() {
               }`}
             />
             <span
-              className={`absolute left-0 top-1.5 h-0.5 w-6 bg-current transition-opacity ${
+              className={`absolute top-1.5 left-0 h-0.5 w-6 bg-current transition-opacity ${
                 open ? "opacity-0" : "opacity-100"
               }`}
             />
@@ -89,17 +92,17 @@ export function SiteHeader() {
       {/* Menú móvil */}
       <div
         id="menu-movil"
-        className={`overflow-hidden bg-selva/98 backdrop-blur-md transition-[max-height] duration-500 md:hidden ${
+        className={`bg-selva/98 overflow-hidden backdrop-blur-md transition-[max-height] duration-500 md:hidden ${
           open ? "max-h-96" : "max-h-0"
         }`}
       >
-        <nav className="flex flex-col gap-1 px-6 pb-8 pt-2" aria-label="Móvil">
+        <nav className="flex flex-col gap-1 px-6 pt-2 pb-8" aria-label="Móvil">
           {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               onClick={() => setOpen(false)}
-              className="border-b border-white/5 py-3 text-lg text-arena/90 hover:text-oro"
+              className="text-arena/90 hover:text-oro border-b border-white/5 py-3 text-lg"
             >
               {item.label}
             </Link>

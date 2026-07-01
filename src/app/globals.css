@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+/*
+  Villa Areka — sistema de diseño
+  Naturaleza & Descanso · Llanos Orientales (Villavicencio, Meta)
+  Paleta derivada del letrero: madera cálida, reja verde-noche, luz dorada,
+  follaje de palma Areca y arena del llano.
+*/
+
+@theme {
+  /* --- Color --- */
+  --color-selva: #12251b; /* verde-noche profundo (base oscura) */
+  --color-selva-800: #17301f;
+  --color-selva-700: #1e3b28;
+  --color-selva-600: #2b4d36;
+  --color-palma: #6e8c63; /* verde salvia / follaje */
+  --color-palma-300: #a7bd9d;
+  --color-oro: #d2a24c; /* ámbar dorado — luz cálida del letrero */
+  --color-oro-300: #e6c583;
+  --color-arena: #f2ead8; /* crema / arena del llano */
+  --color-arena-200: #e9dec6;
+  --color-madera: #7a5230; /* nogal del letrero */
+  --color-tinta: #1a2620; /* texto sobre claro */
+
+  /* --- Tipografía --- */
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-hanken);
+
+  /* --- Radios --- */
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.75rem;
+
+  /* --- Sombras cálidas --- */
+  --shadow-glow: 0 0 80px -20px rgba(210, 162, 76, 0.45);
+}
+
+:root {
+  --background: var(--color-arena);
+  --foreground: var(--color-tinta);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-feature-settings: "ss01";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Eyebrow: eco del "NATURALEZA & DESCANSO" del letrero */
+.eyebrow {
+  font-family: var(--font-sans), sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+/* Titulares display */
+.display {
+  font-family: var(--font-display), Georgia, serif;
+  font-optical-sizing: auto;
+  line-height: 0.98;
+  letter-spacing: -0.015em;
+}
+
+/* Selección */
+::selection {
+  background: var(--color-oro);
+  color: var(--color-selva);
+}
+
+/* Foco visible accesible */
+:focus-visible {
+  outline: 2px solid var(--color-oro);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Aparición suave al hacer scroll */
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  animation: riseIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}

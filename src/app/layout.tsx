@@ -5,6 +5,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { JsonLd } from "@/components/json-ld";
 import { site } from "@/lib/site";
+import { seoKeywords, areasServed, defaultOgImage } from "@/lib/seo";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -26,51 +27,67 @@ export const metadata: Metadata = {
     template: `%s · ${site.name}`,
   },
   description: site.description,
-  keywords: [
-    "finca de descanso Villavicencio",
-    "alquiler finca Meta",
-    "finca vereda Apiay",
-    "finca con piscina Villavicencio",
-    "hospedaje Llanos Orientales",
-    "Villa Areka",
-  ],
+  keywords: seoKeywords,
   authors: [{ name: site.name }],
+  creator: site.name,
+  publisher: site.name,
+  category: "travel",
+  applicationName: site.name,
   alternates: { canonical: "/" },
+  formatDetection: { telephone: true, address: true },
   openGraph: {
     type: "website",
     locale: site.locale,
     url: site.url,
     siteName: site.name,
-    title: `${site.name} — ${site.tagline}`,
+    title: `${site.name} — ${site.tagline} en Villavicencio`,
     description: site.description,
     images: [
       {
-        url: "/og.jpg", // PENDIENTE: imagen social 1200×630
+        url: defaultOgImage, // PENDIENTE: crear public/og.jpg (1200×630)
         width: 1200,
         height: 630,
-        alt: `${site.name}, finca de descanso en Villavicencio`,
+        alt: `${site.name}, finca de descanso con piscina en Villavicencio`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — ${site.tagline}`,
+    title: `${site.name} — ${site.tagline} en Villavicencio`,
     description: site.description,
-    images: ["/og.jpg"],
+    images: [defaultOgImage],
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 /** JSON-LD para buscadores: negocio de hospedaje vacacional. */
 const lodgingJsonLd = {
   "@context": "https://schema.org",
-  "@type": "LodgingBusiness",
+  "@type": ["LodgingBusiness", "Resort"],
+  "@id": `${site.url}/#finca`,
   name: site.name,
+  alternateName: `${site.name} — Finca de descanso en Villavicencio`,
   description: site.description,
   url: site.url,
   slogan: site.tagline,
+  keywords: seoKeywords.join(", "),
+  image: `${site.url}${defaultOgImage}`,
+  priceRange: "$$",
+  currenciesAccepted: "COP",
+  petsAllowed: false,
   address: {
     "@type": "PostalAddress",
+    streetAddress: site.location.vereda,
     addressLocality: site.location.city,
     addressRegion: site.location.region,
     addressCountry: "CO",
@@ -80,21 +97,22 @@ const lodgingJsonLd = {
     latitude: site.location.lat,
     longitude: site.location.lng,
   },
+  hasMap: `https://www.google.com/maps/search/?api=1&query=${site.location.lat},${site.location.lng}`,
+  areaServed: areasServed.map((name) => ({ "@type": "Place", name })),
   telephone: site.contact.phone,
   email: site.contact.email,
+  sameAs: [site.social.instagram, site.social.facebook].filter(Boolean),
   amenityFeature: [
-    { "@type": "LocationFeatureSpecification", name: "Piscina", value: true },
-    {
-      "@type": "LocationFeatureSpecification",
-      name: "Naturaleza",
-      value: true,
-    },
-    {
-      "@type": "LocationFeatureSpecification",
-      name: "Zona de asados",
-      value: true,
-    },
-  ],
+    "Piscina",
+    "Naturaleza llanera",
+    "Zona de asados",
+    "Zonas sociales",
+    "Estacionamiento",
+  ].map((name) => ({
+    "@type": "LocationFeatureSpecification",
+    name,
+    value: true,
+  })),
 };
 
 export default function RootLayout({

@@ -6,12 +6,15 @@ import { Hero } from "@/components/sections/hero";
 import { Booking } from "@/components/sections/booking";
 import { JsonLd } from "@/components/json-ld";
 import { amenities, faqs, site } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: `${site.name} — Finca de descanso con piscina en Villavicencio`,
-  description: site.description,
-  alternates: { canonical: "/" },
-};
+export const metadata: Metadata = pageMetadata({
+  title: `${site.name} | Finca de descanso con piscina en Villavicencio, Meta`,
+  description:
+    "Alquila Villa Areka por días: finca y casa de descanso con piscina en la vereda Apiay, Villavicencio (Meta). Naturaleza de los Llanos Orientales, ideal para estancias cortas en familia.",
+  path: "/",
+  imageAlt: "Villa Areka, finca de descanso con piscina en Villavicencio",
+});
 
 /** FAQ estructurada para buscadores. */
 const faqJsonLd = {

@@ -2,13 +2,36 @@ import type { Metadata } from "next";
 import { Section, Eyebrow, Button } from "@/components/ui";
 import { PalmFrond } from "@/components/icons";
 import { MediaPlaceholder } from "@/components/media-placeholder";
+import { JsonLd } from "@/components/json-ld";
 import { site } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "La Casa — Nuestra historia",
+export const metadata: Metadata = pageMetadata({
+  title: `La Casa — Historia de ${site.name} | Finca de descanso en Villavicencio`,
   description:
-    "La historia de Villa Areka: una finca de descanso en la vereda Apiay, Villavicencio, inspirada en la naturaleza de los Llanos Orientales y el arte de descansar.",
-  alternates: { canonical: "/la-casa" },
+    "Conoce la historia de Villa Areka: una finca y casa de descanso en la vereda Apiay, Villavicencio (Meta), inspirada en la naturaleza de los Llanos Orientales y el piedemonte llanero.",
+  path: "/la-casa",
+  imageAlt: "La Casa — Villa Areka, finca de descanso en los Llanos Orientales",
+});
+
+/** Migas de pan para buscadores. */
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Inicio",
+      item: `${site.url}/`,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "La Casa",
+      item: `${site.url}/la-casa`,
+    },
+  ],
 };
 
 const valores = [
@@ -29,6 +52,7 @@ const valores = [
 export default function LaCasa() {
   return (
     <>
+      <JsonLd data={breadcrumbJsonLd} />
       {/* Encabezado */}
       <section className="bg-selva relative flex min-h-[62svh] items-end overflow-hidden">
         <div className="absolute inset-0">

@@ -9,7 +9,7 @@ export const site = {
   tagline: "Naturaleza & Descanso",
   // Frase de una línea para metadatos y redes.
   description:
-    "Finca de descanso en la vereda Apiay, Villavicencio (Meta). Piscina, naturaleza llanera y tranquilidad para desconectarse. Reserva por días.",
+    "Finca y casa de descanso con piscina en la vereda Apiay, Villavicencio (Meta). Alquiler por días en los Llanos Orientales: naturaleza, tranquilidad y el descanso del piedemonte llanero, ideal para estancias cortas en familia.",
   // URL pública del sitio (ajústala al dominio real cuando exista).
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://villaareka.com",
   locale: "es_CO",
